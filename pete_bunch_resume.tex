@@ -1,0 +1,163 @@
+%%% Modified from a template taken from http://www.howtotex.com/
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{amsmath,amsfonts,amsthm}
+\usepackage{graphicx}
+\usepackage[svgnames]{xcolor}
+\usepackage{array}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage[letterpaper,margin=1in]{geometry}
+
+% Font
+\usepackage[T1]{fontenc}
+\usepackage{quattrocento}\linespread{1}
+
+% Sectioning
+\usepackage{titlesec}
+\titlespacing*{\section}{0pt}{2pt plus 0pt minus 2pt}{0pt plus 2pt minus 2pt}
+\usepackage{sectsty}                                                    % Custom sectioning (see below)
+\sectionfont{\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+
+% Page style
+\frenchspacing
+\pagestyle{empty}
+
+% Macros for sensitive information
+\input{blank_personal_details}
+%\input{real_personal_details}
+
+% Page setup macros
+\definecolor{light-gray}{gray}{0.7}
+
+\newcommand{\sepspace}{\vspace*{0.3em}}
+
+\newcommand{\MyName}[1]{
+                \Huge \usefont{OT1}{phv}{b}{n}  #1 \hfill
+                \par \normalsize \normalfont \sepspace}
+
+\newcommand{\MySlogan}[1]{
+                \large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1} % Slogan (optional)
+                \par \normalsize \normalfont}
+
+\newcommand{\NewPart}[1]{\vspace{-1em} \section*{\uppercase{#1}}}
+\newcommand{\MainHeading}[1]{\noindent\textbf{#1}}
+\newcommand{\SubHeading}[1]{\noindent\textit{#1}}
+\newcommand{\DateBox}[1]{\colorbox{light-gray}{\parbox{8em}{\hfill\color{White}#1}}}
+\newcommand{\Details}[1]{\hangindent=2em\hangafter=0\small#1\normalsize\par}
+
+\newcommand{\WorkEntry}[4]{% Arguments are 1: Job name, 2: Dates, 3: Company, 4: Description
+                \MainHeading{#1} \hfill \DateBox{#2} \par
+                \SubHeading{#3} \par
+                \noindent \hangindent=2em \hangafter=0 \Details{#4} }
+
+\newcommand{\EducationEntry}[3]{% Arguments are 1: Degree, 2: Dates, 3: Description (Institution as a MainHeading beforehand)
+                \SubHeading{#1} \hfill \DateBox{#2} \par
+                \Details{#3} }
+
+
+\begin{document}
+
+
+
+% Name
+\MyName{Pete Bunch}
+%\MySlogan{Curriculum Vitae}
+\vspace{0.5em}
+
+
+
+% Personal details
+%\NewPart{Personal details}
+\begin{tabular}{m{2cm} m{6.5cm} m{2cm} m{3cm}}
+ \textit{Address:}    & \myaddress & 
+ \textit{Email:}      & \href{mailto:\myemail}{\myemail} \\
+ \textit{Phone:}      & \myphonenumber &
+ \textit{Skype:}      & \myskypenumber \\
+ \textit{LinkedIn:}   & \href{https://uk.linkedin.com/in/drpetebunch}{https://uk.linkedin.com/in/drpetebunch} & 
+ \textit{GitHub:}     & \href{https://github.com/drpeteb}{drpeteb} 
+\end{tabular}
+\sepspace
+
+
+
+% Work experience
+\NewPart{Employment}
+
+\WorkEntry{Data Analyst and Modeling Consultant}{2014 --- 2015}{Tesco, Supply Chain Development \\ ThisWay Global}{
+\begin{itemize}
+ \item Developed custom machine learning algorithms and statistical models for probabilistic forecasting.
+ \item Implemented new procedures in SQL to run at scale on a Teradata data warehouse.
+ \item Advised a seed-stage startup on algorithm deployment for a new experimental data product.
+\end{itemize}
+}
+\sepspace
+
+\WorkEntry{Postdoctoral Research Associate}{2014 --- 2015}{Cambridge University Engineering Department}{
+\begin{itemize}
+ \item Engineered a number of new Markov chain Monte algorithms for system learning.
+ \item Co-authored a graduate-level text book on Bayesian signal processing (awaiting publication).
+ \item Created a lab series of `Coffee Conference' internal seminars. Conducted undergraduates admissions interviews.
+ \item Taught small groups of undergraduate engineers in MATLAB, signal processing, and mathematics. \\ (Modules included linear algebra, probability, vector calculus, differential equations, and filter design.)
+\end{itemize}
+}
+\sepspace
+
+\WorkEntry{Summer Intern -- Paid}{Jun --- Aug 2009}{Metaswitch Networks, Network Protocols Division}{
+\begin{itemize}
+  \item Developed software in C and Python, adding support for a new protocol to client-deliverable product code, for a leading telecomms software company.
+\end{itemize}
+}
+\sepspace
+
+\WorkEntry{Industry Intern -- Paid, and DSTL Scholar}{2005 --- 2010}{DSTL (Defence Science \& Technology Laboratories), Electronics Department}{
+\begin{itemize}
+  \item Designed algorithms for in-service and prototype radio frequency detectors for military search applications.
+  \item Lead a \pounds300,000 program of research into acoustic landmine detection technology.
+\end{itemize}
+}
+
+
+
+% Education
+\NewPart{Education}
+
+\MainHeading{University of Cambridge, Cambridge, UK}
+
+\EducationEntry{PhD in Statistical Modeling and Algorithm Design}{2010 --- 2014}{
+\begin{itemize}
+ \item Thesis: \textit{``Particle filtering and smoothing algorithms for challenging time series models.''}
+ \item Formulated and applied statistical models and Bayesian algorithms for inference and learning.
+ \item Published seven journal papers and presented at four international conferences.
+ \item Worked on theoretical and applied projects, including development of new sequential Monte Carlo methods, and algorithm design for detection of heartbeats in cardiography data.
+\end{itemize}
+}
+\sepspace
+
+\EducationEntry{BA \& MEng in Information Engineering (1$^{\text{st}}$ with Distinction)}{2006 --- 2010}{
+\begin{itemize}
+  \item Highest mark in the class in 2008 and 2010; second highest in 2009. Equivalent of 4.0 GPA every year.
+  \item Modules in signal processing, communications, control, hardware and software architecture, and electronics.
+\end{itemize}
+}
+
+
+
+% Skills
+\NewPart{Skills and Activities}
+
+\Details{
+\begin{itemize}
+ \item Coding in MATLAB and Python (expert), SQL, VBA, C and C++ (proficient).
+ \item Comfortable with software engineering principles and object oriented programming.
+ \item Experienced with Git, SVN and LaTeX.
+ \item Men's Captain, Cambridge '99s Rowing Club. Raced at Henley Royal Regatta. 2013 -- 2014
+ \item Captain, Cambridge University Sailing Team. Semi-finals of University Nationals. 2007 -- 2008
+ \item I write poetry and I love statistics. Sometimes I write poems about statistics.
+\end{itemize}
+}
+
+
+
+
+\end{document} 
